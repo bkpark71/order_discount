@@ -1,0 +1,62 @@
+package spring.gicho.order;
+
+public class Order { // public으로 외부에 공개한 것은 파일명과 클래스명이 같아야 함.
+  private Long memberId;
+  private String itemName;
+  private int itemPrice;
+  private int discountPrice;
+
+  public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
+    this.memberId = memberId;
+    this.itemName = itemName;
+    this.itemPrice = itemPrice;
+    this.discountPrice = discountPrice;
+  }
+
+  //계산로직
+  public int calculatedPrice(){
+    return itemPrice - discountPrice;
+  }
+
+  public Long getMemberId() {
+    return memberId;
+  }
+
+  public void setMemberId(Long memberId) {
+    this.memberId = memberId;
+  }
+
+  public String getItemName() {
+    return itemName;
+  }
+
+  public void setItemName(String itemName) {
+    this.itemName = itemName;
+  }
+
+  public int getItemPrice() {
+    return itemPrice;
+  }
+
+  public void setItemPrice(int itemPrice) {
+    this.itemPrice = itemPrice;
+  }
+
+  public int getDiscountPrice() {
+    return discountPrice;
+  }
+
+  public void setDiscountPrice(int discountPrice) {
+    this.discountPrice = discountPrice;
+  }
+
+  @Override
+  public String toString() {
+    return "Order{" +
+        "memberId=" + memberId +
+        ", itemName='" + itemName + '\'' +
+        ", itemPrice=" + itemPrice +
+        ", discountPrice=" + discountPrice +
+        '}';
+  }
+}
